@@ -49,8 +49,8 @@ function App() {
       nameError = "Name is required";
     } else if (!validateEmail(formData.name)) {
       nameError = "Please enter a valid email.";
-    } else if (formData.name.length < 8 || formData.name.length > 20) {
-      nameError = "Name must be between 8 and 20 characters.";
+    } else if (formData.name.length < 8 || formData.name.length > 10) {
+      nameError = "Name must be between 8 and 10 characters.";
     } else if (!/[a-z]/.test(formData.name) || !/[A-Z]/.test(formData.name) || !/\d/.test(formData.name)) {
       nameError = "Name must contain at least one letter (lowercase and uppercase) and one number.";
     }
