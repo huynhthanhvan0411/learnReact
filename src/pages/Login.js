@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { validateEmail, validatePassword } from "../utils/validation";
 import InputField from "../components/InputField";
 import { ButtonLogin, LinkDirect, FormLogin, Div1, Title1 } from "../styled/styled";
+import ButtonLanguage from "../components/ButtonLanguage";
 
 /*Rule validation:
 1. Name:
@@ -64,30 +65,32 @@ const Login = () => {
   };
   return (
     <Div1>
-      <FormLogin onSubmit={handleSubmit}>
-        <Title1>Log in</Title1>
-        <InputField
-          type="text"
-          name="name"
-          placeholder="Enter your name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-     
-          error={errors.name}
-        />
-        <InputField
-          type="password"
-          name="password"
-          placeholder="Enter your password"
-          value={formData.password}
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-          error={errors.password}
-        />
-        <ButtonLogin type="submit">Log in</ButtonLogin>
-        <LinkDirect target="_blank" href="#">
-          or, sign up
-        </LinkDirect>
-      </FormLogin>
+    <ButtonLanguage/>
+      <div>
+        <FormLogin onSubmit={handleSubmit}>
+          <Title1>Log in</Title1>
+          <InputField
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            error={errors.name}
+          />
+          <InputField
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            value={formData.password}
+            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+            error={errors.password}
+          />
+          <ButtonLogin type="submit">Log in</ButtonLogin>
+          <LinkDirect target="_blank" href="#">
+            or, sign up
+          </LinkDirect>
+        </FormLogin>
+      </div>
     </Div1>
   );
 };
