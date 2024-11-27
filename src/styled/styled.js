@@ -73,3 +73,7 @@ export const TextError = styled.p`
     color: red;
     font-size: 12px;
 `;
+
+export const ButtonLanguage = styled.button`
+    
+`;
