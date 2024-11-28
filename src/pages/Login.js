@@ -6,7 +6,7 @@ import { ButtonLogin, LinkDirect, FormLogin, Div1, Title1 } from "../styled/styl
 import ButtonLanguage from "../components/ButtonLanguage";
 
 const Login = () => {
-  const { t } = useTranslation(); // Sử dụng hook để lấy hàm t (dịch)
+  const { t } = useTranslation(); 
   const [formData, setFormData] = useState({
     name: "",
     password: "",
@@ -25,7 +25,7 @@ const Login = () => {
 
     // Check error name
     if (!formData.name) {
-      nameError = t("nameRequired"); // Lấy nội dung dịch
+      nameError = t("nameRequired"); 
     } else if (!validateEmail(formData.name)) {
       nameError = t("invalidEmail");
     } else if (formData.name.length < 8 || formData.name.length > 10) {
@@ -53,34 +53,34 @@ const Login = () => {
   };
 
   return (
-    <Div1>
+      <Div1>
       <ButtonLanguage />
-      <div>
-        <FormLogin onSubmit={handleSubmit}>
-          <Title1>{t("loginTitle")}</Title1>
-          <InputField
-            type="text"
-            name="name"
-            placeholder={t("enterName")}
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            error={errors.name}
-          />
-          <InputField
-            type="password"
-            name="password"
-            placeholder={t("enterPassword")}
-            value={formData.password}
-            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-            error={errors.password}
-          />
-          <ButtonLogin type="submit">{t("loginButton")}</ButtonLogin>
-          <LinkDirect target="_blank" href="#">
-            {t("signUp")}
-          </LinkDirect>
-        </FormLogin>
-      </div>
-    </Div1>
+        <div>
+          <FormLogin onSubmit={handleSubmit}>
+            <Title1>{t("loginTitle")}</Title1>
+            <InputField
+              type="text"
+              name="name"
+              placeholder={t("enterName")}
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              error={errors.name}
+            />
+            <InputField
+              type="password"
+              name="password"
+              placeholder={t("enterPassword")}
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              error={errors.password}
+            />
+            <ButtonLogin type="submit">{t("loginButton")}</ButtonLogin>
+            <LinkDirect target="_blank" href="#">
+              {t("signUp")}
+            </LinkDirect>
+          </FormLogin>
+        </div>
+      </Div1>
   );
 };
 

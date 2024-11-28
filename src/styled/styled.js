@@ -50,6 +50,7 @@ export const FormLogin = styled.form`
     gap: 20px;
 `;
 export const Div1 = styled.div`
+    position: relative;
     display: flex;
     background-color: #FFE4E1;
     justify-content: center;
@@ -74,6 +75,14 @@ export const TextError = styled.p`
     font-size: 12px;
 `;
 
-export const ButtonLanguage = styled.button`
-    
+export const SwitchLanguage = styled.button`
+    position: absolute;
+    background: #FF4500;
+    color: white; 
+    font-size: 14px;
+    text-align:center; 
+    padding: 8px;
+    border-radius: 10px;
+    top: 10px;
+    right: 10px;
 `;

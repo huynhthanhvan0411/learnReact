@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import i18next from "i18next";
+import { SwitchLanguage } from "../styled/styled";
 
 const ButtonLanguage = () => {
     const [language, setLanguage] = useState("vi");
@@ -11,9 +12,9 @@ const ButtonLanguage = () => {
       };
 
      return (
-        <button onClick={toggleLanguage}>
+        <SwitchLanguage onClick={toggleLanguage}>
             {language === "vi" ? "Chuyển sang Tiếng Anh" : "Switch to Vietnamese"}
-        </button>
+        </SwitchLanguage>
      );
 }
 
